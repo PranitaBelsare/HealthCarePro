@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "SearchVaccinationCenter";
+}
+<style>
+    .table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .th, td {
+        padding: 15px;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Search Vaccination Center
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    Country
+                                    <span style="color: #FF0000; font-weight: bold">*</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ddlCountry">
+                                        <option value="0">--Please selec--t</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    State
+                                    <span style="color: #FF0000; font-weight: bold">*</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ddlState">
+                                        <option value="0">--Please select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    City Name
+                                    <span style="color: #FF0000; font-weight: bold">*</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ddlCityName">
+                                        <option value="0">--Please select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    Locality Name
+                                    <span style="color: #FF0000; font-weight: bold">*</span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ddlLocalityName">
+                                        <option value="0">--Please select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 card">
+                        <div class="form-group text-center" id="DisplayDatatable2" style="display:none">
+                            <table id="example2" style="width:100%;" class="table table-hover">
+                                <caption><b>Vaccination Center List</b></caption>
+                                <thead>
+                                    <tr>
+                                        <th><center><b>Address</b></center></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="getTable2"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*@section scripts{
+
+    }*@
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/KratinPro/ElderCare.js"></script>
+<Script>
+    $(document).ready(function () {
+        ManageElderCarePage.Init();
+    });
+</Script>
+
+

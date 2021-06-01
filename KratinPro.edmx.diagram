@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4db962429ff64d23ae046325ccf74ecc" Name="Diagram1">
+        <EntityTypeShape EntityType="KratinProModel.Gender" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KratinProModel.UserInfo" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="KratinProModel.FK__UserInfo__Gender__36B12243" />
+        <EntityTypeShape EntityType="KratinProModel.HospitalInfo" Width="1.5" PointX="5.25" PointY="6.5" />
+        <EntityTypeShape EntityType="KratinProModel.Hospital" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="KratinProModel.SpecialistDoc" Width="1.5" PointX="0.75" PointY="7" />
+        <AssociationConnector Association="KratinProModel.FK__HospitalI__Hospi__5812160E" />
+        <AssociationConnector Association="KratinProModel.FK__HospitalI__Speci__571DF1D5" />
+        <AssociationConnector Association="KratinProModel.FK__Hospitals__Speci__5441852A" />
+        <EntityTypeShape EntityType="KratinProModel.MarritalStatu" Width="1.5" PointX="3.75" PointY="10.75" />
+        <EntityTypeShape EntityType="KratinProModel.NPHCESchme" Width="1.5" PointX="6" PointY="0.75" />
+        <AssociationConnector Association="KratinProModel.FK__NPHCESchm__Gende__628FA481" />
+        <AssociationConnector Association="KratinProModel.FK__NPHCESchm__Marri__619B8048" />
+        <EntityTypeShape EntityType="KratinProModel.City" Width="1.5" PointX="11.875" PointY="6.25" />
+        <EntityTypeShape EntityType="KratinProModel.Country" Width="1.5" PointX="7.375" PointY="6.375" />
+        <EntityTypeShape EntityType="KratinProModel.State" Width="1.5" PointX="9.625" PointY="6.125" />
+        <AssociationConnector Association="KratinProModel.FK__City__StatesId__17036CC0" />
+        <AssociationConnector Association="KratinProModel.FK__States__CountryI__14270015" />
+        <EntityTypeShape EntityType="KratinProModel.Vaccination" Width="1.5" PointX="14.125" PointY="5.875" />
+        <AssociationConnector Association="KratinProModel.FK__Vaccinati__CityI__3D2915A8" />
+        <AssociationConnector Association="KratinProModel.FK__Vaccinati__Count__40058253" />
+        <AssociationConnector Association="KratinProModel.FK__Vaccinati__State__3E1D39E1" />
+        <EntityTypeShape EntityType="KratinProModel.Locality" Width="1.5" PointX="14.125" PointY="10.375" />
+        <AssociationConnector Association="KratinProModel.FK__Locality__CityId__1EA48E88" />
+        <AssociationConnector Association="KratinProModel.FK__Vaccinati__Local__3F115E1A" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

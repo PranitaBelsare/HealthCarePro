@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "ElderCarePage";
+    Layout = null;
+}
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="container my-4">
+    <div id="signupbox" style="margin-top:50px">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <center><h6><b>Welcome:&nbsp;&nbsp;<a href="#">@Session["FirstName"]</a></b></h6></center>
+                    <center><h3><b>HEALTHCARE</b></h3></center>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <center><h5><b>What Are You Looking For?</b></h5></center><br><br>
+                    <div class="col-3 card">
+                        <img class="card-img-top" src="~/Content/Image/h.jpg" height="200" width="200" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
+                            <a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-info">Heart Care</a>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img class="card-img-top" src="~/Content/Image/b.jpg" height="200" width="200" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
+                            <a href="#myModal2" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">Bones And Joint</a>
+                        </div>
+                    </div>
+                    <div class="col-3 card">
+                        <img class="card-img-top" src="~/Content/Image/Senior.jpg" height="200" width="200" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
+                            <a href="#myModal3" data-toggle="modal" data-target="#myModal3" class="btn btn-warning">Boost Immunity</a>
+                        </div>
+                    </div>
+                    <div class="col-3 card" style="width:500px">
+                        <img class="card-img-top" src="~/Content/Image/a.jpg" height="200" width="200" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
+                            <a href="#myModal4" data-toggle="modal" data-target="#myModal4" class="btn btn-danger">Ayurveda & Herbs</a>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="row">
+                    <center><h4><b>Goverment Schemes Launched For The Benefit Of Senior Citizen</b></h4></center><br>
+                    <center><h4><b>CLICK TO REGISTER</b></h4></center>
+                    <h6><b><a href="/GovtScheme/NPHCEScheme1">1)National Programme For The Health Of Elderly(NPHCE)</a></b></h6>
+                    <h6><b><a href="/GovtScheme/MedicalClaimScheme">2)Varists Mediclaim Policy</a></b></h6>
+                    <h6><b><a href="#">3)Senior Citizens' Welfare Fund</a></b></h6>
+                </div>
+               <center> <br><h6><b><a href="/ElderCare/ManageDatatable" class="btn btn-danger">Click To Search Hospitals</a></b></h6>
+                <h6><b><a href="/ElderCare/SearchVaccinationCenter" class="btn btn-danger">Click To Search Vaccination Center</a></b></h6></center>
+             </div>
+                <input type="hidden" id="hospitalInfoId" value="0" />
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:darkred; font-family:verdana; text-align:center;">Ways to maintain Heart Health in Old Age</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" style="overflow:scroll;">
+                <center><h6><b> Watch your Diet</b></h6></center>
+                A healthy diet keeps the heart healthy by supplying the required health boosters to the body and also controls weight. Elders should incorporate leafy green vegetables such as kale, spinach, etc.                Modal body..
+                <center><h6><b> Stop Smoking</b></h6></center>
+                Smoking has always been associated with heart ailments. Hence, it is ideal to quit smoking for seniors to protect their heart.
+                <center><h6><b> Exercise Daily</b></h6></center>
+                Cardio exercises such as walking, swimming and light aerobics are easy to perform and also complement the heart health.
+                <center><h6><b>Stay Happy and Socially Connected</b></h6></center>
+                Seniors should also stay connected with people from neighborhood and family to keep stress away.
+                <center><h6><b>Sleep Well</b></h6></center>
+                Less sleep can also affect heart health; hence elders should sleep for at least 7 to 9 hours a day.
+                <center><h6><b>Have Regular Checkups</b></h6></center>
+                To keep heart health in check, one should undergo health checkups at least once every year.
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:saddlebrown; font-family:verdana; text-align:center;">How to halt the thinning of your bones as you age</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="overflow:scroll;">
+                <center><h6><b> 1. Eat lots of vegetables.</b></h6></center>
+                Vegetables are the best source of Vitamin C, which stimulates production of bone-forming cells.
+                <center><h6><b> 2. Add D to your day.</b></h6></center>
+                To help absorb calcium, most adults need 1,000 to 2,000 IU of vitamin D daily, says rheumatologist Chad Deal, MD.Taking a vitamin D supplement will ensure you meet your daily needs.
+                <center><h6><b> 3. Start weight-bearing exercises.</b></h6></center>
+                High-impact weight-bearing exercises are best for building bones.
+                Examples of high-impact exercises include:
+                1)Running or jogging.
+                2) High-impact aerobics.
+                3)Stair climbing.
+                4)Dancing.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal3">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:olive; font-family:verdana; text-align:center;">Ways to Boost Your Immune System If You’re Over 65</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="overflow:scroll;">
+                <center><h6><b> 1. Get a flu vaccination</b></h6></center>
+                Fluzone and Fluad are two vaccines specifically for older adults ages 65 and older. These vaccines provide a stronger immune system response to vaccination compared to a standard-dose flu shot.
+                <center><h6><b> 2. Maintain a healthy weight</b></h6></center>
+                Both physical activity and eating a healthy diet can reduce inflammation and keep your immune system healthy and strong.
+                <center><h6><b> 3. Spend time outdoors</b></h6></center>
+                Vitamin D also helps strengthen the immune system. If your vitamin D level is low, your doctor may prescribe supplements or recommend an over-the-counter multivitamin.
+                <center><h6><b> 4. Get plenty of sleep</b></h6></center>
+                Aim for at least seven and a half to nine hours of sleep per night. To improve the quality of your sleep, make sure your room is dark, quiet, and cool.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal4">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:olive; font-family:verdana; text-align:center;">Ayurvedic Herbs and Spices with Health Benefits</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="overflow:scroll;">
+                <center><h6><b> 1: Ashwagandha</b></h6></center>
+                It can bring the strength and stamina of a horse while nourishing the female and male reproductive and nervous systems
+                <center><h6><b> 2: Brahmi</b></h6></center>
+                1) Works as a brain tonic
+                2)Enhance memory, concentration, and intelligence
+                3)Improve nervous system function
+                4)Reduces stress and depression
+                <center><h6><b> 3: Shatavari </b></h6></center>
+                1)Works as a brain tonic
+                2)Enhance memory, concentration, and intelligence
+                3)Improve nervous system function.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*@section scripts{
+    
+}*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/KratinPro/ElderCare.js"></script>
+<Script>
+        $(document).ready(function () {
+            ManageElderCarePage.Init();
+        });
+</Script>
+

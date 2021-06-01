@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "ManageLoginPage";
+    
+}
+
+@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">Sign In</div>
+        </div>
+        <div style="padding-top:30px" class="panel-body">
+            <div class="form-group">
+                <label class="col-md-4 control-label">User Name</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="txtUserName" name="first_name" placeholder="First Name" class="form-control" type="text">
+                </div>
+                <br> <br>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Login</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="txtLoginPassword" type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button id="btnLogin" type="button" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLogin<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 control-label">
+                        <div style="padding-top:15px; font-size:90%">
+                            Don't have an account! <a href="/UserRegistration/ManageUserDetails">Sign Up </a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/KratinPro/LoginPage.js"></script>
+
+    <Script>
+        $(document).ready(function () {
+            ManageLoginPage.Init();
+        });
+    </Script>
+}
+
+
+

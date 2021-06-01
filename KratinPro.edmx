@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KratinProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="StatesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="GenderId" />
+          </Key>
+          <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GenderName" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HospitalInfo">
+          <Key>
+            <PropertyRef Name="HospitalInfoId" />
+          </Key>
+          <Property Name="HospitalInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Addresss" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="MobileNO" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="SpecialistDocId" Type="int" Nullable="false" />
+          <Property Name="HospitalsId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Hospitals">
+          <Key>
+            <PropertyRef Name="HospitalsId" />
+          </Key>
+          <Property Name="HospitalsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HospitalsName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="SpecialistDocId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Locality">
+          <Key>
+            <PropertyRef Name="LocalityId" />
+          </Key>
+          <Property Name="LocalityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocalityName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MarritalStatus">
+          <Key>
+            <PropertyRef Name="MarritalStatusId" />
+          </Key>
+          <Property Name="MarritalStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MarritalStatus" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NPHCESchme">
+          <Key>
+            <PropertyRef Name="NPHCESchmeId" />
+          </Key>
+          <Property Name="NPHCESchmeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="MarritalStatusId" Type="int" Nullable="false" />
+          <Property Name="GenderId" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="BankBranch" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="BankAccNo" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="AadharNo" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="Age" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="SpecialistDoc">
+          <Key>
+            <PropertyRef Name="SpecialistDocId" />
+          </Key>
+          <Property Name="SpecialistDocId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="StatesId" />
+          </Key>
+          <Property Name="StatesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatesName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UserInfoId" />
+          </Key>
+          <Property Name="UserInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="PassWd" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="MobileNO" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="GenderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vaccination">
+          <Key>
+            <PropertyRef Name="VaccinationId" />
+          </Key>
+          <Property Name="VaccinationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adresss" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="StatesId" Type="int" Nullable="false" />
+          <Property Name="LocalityId" Type="int" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__City__StatesId__17036CC0">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StatesId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StatesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HospitalI__Hospi__5812160E">
+          <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="1" />
+          <End Role="HospitalInfo" Type="Self.HospitalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospitals">
+              <PropertyRef Name="HospitalsId" />
+            </Principal>
+            <Dependent Role="HospitalInfo">
+              <PropertyRef Name="HospitalsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HospitalI__Speci__571DF1D5">
+          <End Role="SpecialistDoc" Type="Self.SpecialistDoc" Multiplicity="1" />
+          <End Role="HospitalInfo" Type="Self.HospitalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecialistDoc">
+              <PropertyRef Name="SpecialistDocId" />
+            </Principal>
+            <Dependent Role="HospitalInfo">
+              <PropertyRef Name="SpecialistDocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hospitals__Speci__5441852A">
+          <End Role="SpecialistDoc" Type="Self.SpecialistDoc" Multiplicity="1" />
+          <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecialistDoc">
+              <PropertyRef Name="SpecialistDocId" />
+            </Principal>
+            <Dependent Role="Hospitals">
+              <PropertyRef Name="SpecialistDocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Locality__CityId__1EA48E88">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Locality" Type="Self.Locality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Locality">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NPHCESchm__Gende__628FA481">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="NPHCESchme" Type="Self.NPHCESchme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderId" />
+            </Principal>
+            <Dependent Role="NPHCESchme">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NPHCESchm__Marri__619B8048">
+          <End Role="MarritalStatus" Type="Self.MarritalStatus" Multiplicity="1" />
+          <End Role="NPHCESchme" Type="Self.NPHCESchme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarritalStatus">
+              <PropertyRef Name="MarritalStatusId" />
+            </Principal>
+            <Dependent Role="NPHCESchme">
+              <PropertyRef Name="MarritalStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__States__CountryI__14270015">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="States" Type="Self.States" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="States">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserInfo__Gender__36B12243">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderId" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__CityI__3D2915A8">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__Count__40058253">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__Local__3F115E1A">
+          <End Role="Locality" Type="Self.Locality" Multiplicity="1" />
+          <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locality">
+              <PropertyRef Name="LocalityId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="LocalityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__State__3E1D39E1">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Vaccination" Type="Self.Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StatesId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="StatesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KratinProModelStoreContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HospitalInfo" EntityType="Self.HospitalInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hospitals" EntityType="Self.Hospitals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locality" EntityType="Self.Locality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarritalStatus" EntityType="Self.MarritalStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NPHCESchme" EntityType="Self.NPHCESchme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpecialistDoc" EntityType="Self.SpecialistDoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vaccination" EntityType="Self.Vaccination" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__City__StatesId__17036CC0" Association="Self.FK__City__StatesId__17036CC0">
+            <End Role="States" EntitySet="States" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HospitalI__Hospi__5812160E" Association="Self.FK__HospitalI__Hospi__5812160E">
+            <End Role="Hospitals" EntitySet="Hospitals" />
+            <End Role="HospitalInfo" EntitySet="HospitalInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HospitalI__Speci__571DF1D5" Association="Self.FK__HospitalI__Speci__571DF1D5">
+            <End Role="SpecialistDoc" EntitySet="SpecialistDoc" />
+            <End Role="HospitalInfo" EntitySet="HospitalInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hospitals__Speci__5441852A" Association="Self.FK__Hospitals__Speci__5441852A">
+            <End Role="SpecialistDoc" EntitySet="SpecialistDoc" />
+            <End Role="Hospitals" EntitySet="Hospitals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Locality__CityId__1EA48E88" Association="Self.FK__Locality__CityId__1EA48E88">
+            <End Role="City" EntitySet="City" />
+            <End Role="Locality" EntitySet="Locality" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NPHCESchm__Gende__628FA481" Association="Self.FK__NPHCESchm__Gende__628FA481">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="NPHCESchme" EntitySet="NPHCESchme" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NPHCESchm__Marri__619B8048" Association="Self.FK__NPHCESchm__Marri__619B8048">
+            <End Role="MarritalStatus" EntitySet="MarritalStatus" />
+            <End Role="NPHCESchme" EntitySet="NPHCESchme" />
+          </AssociationSet>
+          <AssociationSet Name="FK__States__CountryI__14270015" Association="Self.FK__States__CountryI__14270015">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="States" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserInfo__Gender__36B12243" Association="Self.FK__UserInfo__Gender__36B12243">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__CityI__3D2915A8" Association="Self.FK__Vaccinati__CityI__3D2915A8">
+            <End Role="City" EntitySet="City" />
+            <End Role="Vaccination" EntitySet="Vaccination" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__Count__40058253" Association="Self.FK__Vaccinati__Count__40058253">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Vaccination" EntitySet="Vaccination" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__Local__3F115E1A" Association="Self.FK__Vaccinati__Local__3F115E1A">
+            <End Role="Locality" EntitySet="Locality" />
+            <End Role="Vaccination" EntitySet="Vaccination" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__State__3E1D39E1" Association="Self.FK__Vaccinati__State__3E1D39E1">
+            <End Role="States" EntitySet="States" />
+            <End Role="Vaccination" EntitySet="Vaccination" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KratinProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="GenderId" />
+          </Key>
+          <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenderName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserInfoes" Relationship="KratinProModel.FK__UserInfo__Gender__36B12243" FromRole="Gender" ToRole="UserInfo" />
+          <NavigationProperty Name="NPHCESchmes" Relationship="KratinProModel.FK__NPHCESchm__Gende__628FA481" FromRole="Gender" ToRole="NPHCESchme" />
+        </EntityType>
+        <EntityContainer Name="KratinProEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="UserInfoes" EntityType="KratinProModel.UserInfo" />
+          <AssociationSet Name="FK__UserInfo__Gender__36B12243" Association="KratinProModel.FK__UserInfo__Gender__36B12243">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="UserInfo" EntitySet="UserInfoes" />
+          </AssociationSet>
+          <EntitySet Name="HospitalInfoes" EntityType="KratinProModel.HospitalInfo" />
+          <EntitySet Name="Hospitals" EntityType="KratinProModel.Hospital" />
+          <EntitySet Name="SpecialistDocs" EntityType="KratinProModel.SpecialistDoc" />
+          <AssociationSet Name="FK__HospitalI__Hospi__5812160E" Association="KratinProModel.FK__HospitalI__Hospi__5812160E">
+            <End Role="Hospital" EntitySet="Hospitals" />
+            <End Role="HospitalInfo" EntitySet="HospitalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HospitalI__Speci__571DF1D5" Association="KratinProModel.FK__HospitalI__Speci__571DF1D5">
+            <End Role="SpecialistDoc" EntitySet="SpecialistDocs" />
+            <End Role="HospitalInfo" EntitySet="HospitalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hospitals__Speci__5441852A" Association="KratinProModel.FK__Hospitals__Speci__5441852A">
+            <End Role="SpecialistDoc" EntitySet="SpecialistDocs" />
+            <End Role="Hospital" EntitySet="Hospitals" />
+          </AssociationSet>
+          <EntitySet Name="MarritalStatus" EntityType="KratinProModel.MarritalStatu" />
+          <EntitySet Name="NPHCESchmes" EntityType="KratinProModel.NPHCESchme" />
+          <AssociationSet Name="FK__NPHCESchm__Gende__628FA481" Association="KratinProModel.FK__NPHCESchm__Gende__628FA481">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="NPHCESchme" EntitySet="NPHCESchmes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NPHCESchm__Marri__619B8048" Association="KratinProModel.FK__NPHCESchm__Marri__619B8048">
+            <End Role="MarritalStatu" EntitySet="MarritalStatus" />
+            <End Role="NPHCESchme" EntitySet="NPHCESchmes" />
+          </AssociationSet>
+          <EntitySet Name="Cities" EntityType="KratinProModel.City" />
+          <EntitySet Name="Countries" EntityType="KratinProModel.Country" />
+          <EntitySet Name="States" EntityType="KratinProModel.State" />
+          <AssociationSet Name="FK__City__StatesId__17036CC0" Association="KratinProModel.FK__City__StatesId__17036CC0">
+            <End Role="State" EntitySet="States" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__States__CountryI__14270015" Association="KratinProModel.FK__States__CountryI__14270015">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <EntitySet Name="Vaccinations" EntityType="KratinProModel.Vaccination" />
+          <AssociationSet Name="FK__Vaccinati__CityI__3D2915A8" Association="KratinProModel.FK__Vaccinati__CityI__3D2915A8">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Vaccination" EntitySet="Vaccinations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__Count__40058253" Association="KratinProModel.FK__Vaccinati__Count__40058253">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Vaccination" EntitySet="Vaccinations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__State__3E1D39E1" Association="KratinProModel.FK__Vaccinati__State__3E1D39E1">
+            <End Role="State" EntitySet="States" />
+            <End Role="Vaccination" EntitySet="Vaccinations" />
+          </AssociationSet>
+          <EntitySet Name="Localities" EntityType="KratinProModel.Locality" />
+          <AssociationSet Name="FK__Locality__CityId__1EA48E88" Association="KratinProModel.FK__Locality__CityId__1EA48E88">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Locality" EntitySet="Localities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vaccinati__Local__3F115E1A" Association="KratinProModel.FK__Vaccinati__Local__3F115E1A">
+            <End Role="Locality" EntitySet="Localities" />
+            <End Role="Vaccination" EntitySet="Vaccinations" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UserInfoId" />
+          </Key>
+          <Property Name="UserInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="PassWd" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNO" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GenderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="KratinProModel.FK__UserInfo__Gender__36B12243" FromRole="UserInfo" ToRole="Gender" />
+        </EntityType>
+        <Association Name="FK__UserInfo__Gender__36B12243">
+          <End Type="KratinProModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="KratinProModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderId" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HospitalInfo">
+          <Key>
+            <PropertyRef Name="HospitalInfoId" />
+          </Key>
+          <Property Name="HospitalInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Addresss" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNO" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="SpecialistDocId" Type="Int32" Nullable="false" />
+          <Property Name="HospitalsId" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Hospital" Relationship="KratinProModel.FK__HospitalI__Hospi__5812160E" FromRole="HospitalInfo" ToRole="Hospital" />
+          <NavigationProperty Name="SpecialistDoc" Relationship="KratinProModel.FK__HospitalI__Speci__571DF1D5" FromRole="HospitalInfo" ToRole="SpecialistDoc" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="HospitalsId" />
+          </Key>
+          <Property Name="HospitalsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HospitalsName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialistDocId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HospitalInfoes" Relationship="KratinProModel.FK__HospitalI__Hospi__5812160E" FromRole="Hospital" ToRole="HospitalInfo" />
+          <NavigationProperty Name="SpecialistDoc" Relationship="KratinProModel.FK__Hospitals__Speci__5441852A" FromRole="Hospital" ToRole="SpecialistDoc" />
+        </EntityType>
+        <EntityType Name="SpecialistDoc">
+          <Key>
+            <PropertyRef Name="SpecialistDocId" />
+          </Key>
+          <Property Name="SpecialistDocId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HospitalInfoes" Relationship="KratinProModel.FK__HospitalI__Speci__571DF1D5" FromRole="SpecialistDoc" ToRole="HospitalInfo" />
+          <NavigationProperty Name="Hospitals" Relationship="KratinProModel.FK__Hospitals__Speci__5441852A" FromRole="SpecialistDoc" ToRole="Hospital" />
+        </EntityType>
+        <Association Name="FK__HospitalI__Hospi__5812160E">
+          <End Type="KratinProModel.Hospital" Role="Hospital" Multiplicity="1" />
+          <End Type="KratinProModel.HospitalInfo" Role="HospitalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospital">
+              <PropertyRef Name="HospitalsId" />
+            </Principal>
+            <Dependent Role="HospitalInfo">
+              <PropertyRef Name="HospitalsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HospitalI__Speci__571DF1D5">
+          <End Type="KratinProModel.SpecialistDoc" Role="SpecialistDoc" Multiplicity="1" />
+          <End Type="KratinProModel.HospitalInfo" Role="HospitalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecialistDoc">
+              <PropertyRef Name="SpecialistDocId" />
+            </Principal>
+            <Dependent Role="HospitalInfo">
+              <PropertyRef Name="SpecialistDocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hospitals__Speci__5441852A">
+          <End Type="KratinProModel.SpecialistDoc" Role="SpecialistDoc" Multiplicity="1" />
+          <End Type="KratinProModel.Hospital" Role="Hospital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecialistDoc">
+              <PropertyRef Name="SpecialistDocId" />
+            </Principal>
+            <Dependent Role="Hospital">
+              <PropertyRef Name="SpecialistDocId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MarritalStatu">
+          <Key>
+            <PropertyRef Name="MarritalStatusId" />
+          </Key>
+          <Property Name="MarritalStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MarritalStatus" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NPHCESchmes" Relationship="KratinProModel.FK__NPHCESchm__Marri__619B8048" FromRole="MarritalStatu" ToRole="NPHCESchme" />
+        </EntityType>
+        <EntityType Name="NPHCESchme">
+          <Key>
+            <PropertyRef Name="NPHCESchmeId" />
+          </Key>
+          <Property Name="NPHCESchmeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MarritalStatusId" Type="Int32" Nullable="false" />
+          <Property Name="GenderId" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BankBranch" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="BankAccNo" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="AadharNo" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Gender" Relationship="KratinProModel.FK__NPHCESchm__Gende__628FA481" FromRole="NPHCESchme" ToRole="Gender" />
+          <NavigationProperty Name="MarritalStatu" Relationship="KratinProModel.FK__NPHCESchm__Marri__619B8048" FromRole="NPHCESchme" ToRole="MarritalStatu" />
+        </EntityType>
+        <Association Name="FK__NPHCESchm__Gende__628FA481">
+          <End Type="KratinProModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="KratinProModel.NPHCESchme" Role="NPHCESchme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="GenderId" />
+            </Principal>
+            <Dependent Role="NPHCESchme">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NPHCESchm__Marri__619B8048">
+          <End Type="KratinProModel.MarritalStatu" Role="MarritalStatu" Multiplicity="1" />
+          <End Type="KratinProModel.NPHCESchme" Role="NPHCESchme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarritalStatu">
+              <PropertyRef Name="MarritalStatusId" />
+            </Principal>
+            <Dependent Role="NPHCESchme">
+              <PropertyRef Name="MarritalStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="StatesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="KratinProModel.FK__City__StatesId__17036CC0" FromRole="City" ToRole="State" />
+          <NavigationProperty Name="Vaccinations" Relationship="KratinProModel.FK__Vaccinati__CityI__3D2915A8" FromRole="City" ToRole="Vaccination" />
+          <NavigationProperty Name="Localities" Relationship="KratinProModel.FK__Locality__CityId__1EA48E88" FromRole="City" ToRole="Locality" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="States" Relationship="KratinProModel.FK__States__CountryI__14270015" FromRole="Country" ToRole="State" />
+          <NavigationProperty Name="Vaccinations" Relationship="KratinProModel.FK__Vaccinati__Count__40058253" FromRole="Country" ToRole="Vaccination" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StatesId" />
+          </Key>
+          <Property Name="StatesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatesName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="KratinProModel.FK__City__StatesId__17036CC0" FromRole="State" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="KratinProModel.FK__States__CountryI__14270015" FromRole="State" ToRole="Country" />
+          <NavigationProperty Name="Vaccinations" Relationship="KratinProModel.FK__Vaccinati__State__3E1D39E1" FromRole="State" ToRole="Vaccination" />
+        </EntityType>
+        <Association Name="FK__City__StatesId__17036CC0">
+          <End Type="KratinProModel.State" Role="State" Multiplicity="1" />
+          <End Type="KratinProModel.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StatesId" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StatesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__States__CountryI__14270015">
+          <End Type="KratinProModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="KratinProModel.State" Role="State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vaccination">
+          <Key>
+            <PropertyRef Name="VaccinationId" />
+          </Key>
+          <Property Name="VaccinationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adresss" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="StatesId" Type="Int32" Nullable="false" />
+          <Property Name="LocalityId" Type="Int32" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="KratinProModel.FK__Vaccinati__CityI__3D2915A8" FromRole="Vaccination" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="KratinProModel.FK__Vaccinati__Count__40058253" FromRole="Vaccination" ToRole="Country" />
+          <NavigationProperty Name="State" Relationship="KratinProModel.FK__Vaccinati__State__3E1D39E1" FromRole="Vaccination" ToRole="State" />
+          <NavigationProperty Name="Locality" Relationship="KratinProModel.FK__Vaccinati__Local__3F115E1A" FromRole="Vaccination" ToRole="Locality" />
+        </EntityType>
+        <Association Name="FK__Vaccinati__CityI__3D2915A8">
+          <End Type="KratinProModel.City" Role="City" Multiplicity="1" />
+          <End Type="KratinProModel.Vaccination" Role="Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__Count__40058253">
+          <End Type="KratinProModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="KratinProModel.Vaccination" Role="Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__State__3E1D39E1">
+          <End Type="KratinProModel.State" Role="State" Multiplicity="1" />
+          <End Type="KratinProModel.Vaccination" Role="Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StatesId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="StatesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Locality">
+          <Key>
+            <PropertyRef Name="LocalityId" />
+          </Key>
+          <Property Name="LocalityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalityName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="KratinProModel.FK__Locality__CityId__1EA48E88" FromRole="Locality" ToRole="City" />
+          <NavigationProperty Name="Vaccinations" Relationship="KratinProModel.FK__Vaccinati__Local__3F115E1A" FromRole="Locality" ToRole="Vaccination" />
+        </EntityType>
+        <Association Name="FK__Locality__CityId__1EA48E88">
+          <End Type="KratinProModel.City" Role="City" Multiplicity="1" />
+          <End Type="KratinProModel.Locality" Role="Locality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Locality">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vaccinati__Local__3F115E1A">
+          <End Type="KratinProModel.Locality" Role="Locality" Multiplicity="1" />
+          <End Type="KratinProModel.Vaccination" Role="Vaccination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locality">
+              <PropertyRef Name="LocalityId" />
+            </Principal>
+            <Dependent Role="Vaccination">
+              <PropertyRef Name="LocalityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KratinProModelStoreContainer" CdmEntityContainer="KratinProEntities">
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="KratinProModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="KratinProModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNO" ColumnName="MobileNO" />
+                <ScalarProperty Name="PassWd" ColumnName="PassWd" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HospitalInfoes">
+            <EntityTypeMapping TypeName="KratinProModel.HospitalInfo">
+              <MappingFragment StoreEntitySet="HospitalInfo">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HospitalsId" ColumnName="HospitalsId" />
+                <ScalarProperty Name="SpecialistDocId" ColumnName="SpecialistDocId" />
+                <ScalarProperty Name="MobileNO" ColumnName="MobileNO" />
+                <ScalarProperty Name="Addresss" ColumnName="Addresss" />
+                <ScalarProperty Name="DocName" ColumnName="DocName" />
+                <ScalarProperty Name="HospitalInfoId" ColumnName="HospitalInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="KratinProModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospitals">
+                <ScalarProperty Name="SpecialistDocId" ColumnName="SpecialistDocId" />
+                <ScalarProperty Name="HospitalsName" ColumnName="HospitalsName" />
+                <ScalarProperty Name="HospitalsId" ColumnName="HospitalsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialistDocs">
+            <EntityTypeMapping TypeName="KratinProModel.SpecialistDoc">
+              <MappingFragment StoreEntitySet="SpecialistDoc">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="SpecialistDocId" ColumnName="SpecialistDocId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarritalStatus">
+            <EntityTypeMapping TypeName="KratinProModel.MarritalStatu">
+              <MappingFragment StoreEntitySet="MarritalStatus">
+                <ScalarProperty Name="MarritalStatus" ColumnName="MarritalStatus" />
+                <ScalarProperty Name="MarritalStatusId" ColumnName="MarritalStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NPHCESchmes">
+            <EntityTypeMapping TypeName="KratinProModel.NPHCESchme">
+              <MappingFragment StoreEntitySet="NPHCESchme">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="AadharNo" ColumnName="AadharNo" />
+                <ScalarProperty Name="BankAccNo" ColumnName="BankAccNo" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="MarritalStatusId" ColumnName="MarritalStatusId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NPHCESchmeId" ColumnName="NPHCESchmeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="KratinProModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="StatesId" ColumnName="StatesId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="KratinProModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="KratinProModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StatesName" ColumnName="StatesName" />
+                <ScalarProperty Name="StatesId" ColumnName="StatesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vaccinations">
+            <EntityTypeMapping TypeName="KratinProModel.Vaccination">
+              <MappingFragment StoreEntitySet="Vaccination">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="LocalityId" ColumnName="LocalityId" />
+                <ScalarProperty Name="StatesId" ColumnName="StatesId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Adresss" ColumnName="Adresss" />
+                <ScalarProperty Name="VaccinationId" ColumnName="VaccinationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localities">
+            <EntityTypeMapping TypeName="KratinProModel.Locality">
+              <MappingFragment StoreEntitySet="Locality">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="LocalityName" ColumnName="LocalityName" />
+                <ScalarProperty Name="LocalityId" ColumnName="LocalityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "NPHCEScheme1";
+}
+
+<div class="container my-4">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <center><h4><b>NPHCES Form</b></h4></center>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform" class="form-horizontal" role="form">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Name Of The Member</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtFullName" name="txtFullName" placeholder="Full Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Marrital Status</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <select name="MarritalStatus" id="ddlMarritalStatus" class="form-control selectpicker">
+                                        <option value="">Select your Gender</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Gender</label>
+                            <div class="col-md-9 selectContainer">
+                                <div class="input-group">
+                                    <select name="Gender" id="ddlGender" class="form-control selectpicker">
+                                        <option value="">Select your Status</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Date Of Birth</label>
+                            <div class="col-md-9 selectContainer">
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input class="form-control" id="dtDOB" data-inputmask-alias="dd/mm/yyyy"
+                                           data-inputmask="'yearrange': { 'minyear': '1917', 'maxyear': '2020' }"
+                                           data-val="true" data-val-required="Required" placeholder="dd/mm/yyyy" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Age</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAge" name="Age" placeholder="Age" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bank Branch Name</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtBranchName" name="user_BranchName" placeholder="Bank BranchName" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bank Account No.</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAccNo" name="user_acc" placeholder="Bank Account No" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">E-Mail</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtEmail" name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">AADHAR NUMBER</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAddharNo" name="contact_no"  class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Contact No.</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtContact" name="contact_no" placeholder="(639)" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <button id="btnRegisterForScheme" type="button" class="btn btn-primary">REGISTER</button>
+                                <button id="btnCancelForScheme" type="reset" class="btn btn-primary">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+  <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/KratinPro/NPHCEscheme.js"></script>
+    <Script>
+        $(document).ready(function () {
+            ManageSchemePage.Init();
+        });
+    </Script>
+}
+
+

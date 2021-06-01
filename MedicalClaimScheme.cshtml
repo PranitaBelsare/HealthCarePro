@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "MedicalClaimScheme";
+}
+
+<div class="container my-4">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <center><h4><b>MedicalClaim Form</b></h4></center>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform" class="form-horizontal" role="form">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Name Of The Insured</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtFullName" name="txtFullName" placeholder="Full Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Relationship to the insured person</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtRelation" name="user_Relation" placeholder="Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Age</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAge" name="Age" placeholder="Age" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Residential Address</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAdd" name="Add" placeholder="Address" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Occupation</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtOccupation" name="user_Occupation" placeholder="Occupation" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Blood Pressure</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <select name="BloodPressure" id="ddlPressure" class="form-control selectpicker">
+                                        <option value="">--Please Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Blood Sugar</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <select name="Sugar" id="ddlSugar" class="form-control selectpicker">
+                                        <option value="">--Please Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Anemia</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <select name="Anemia" id="ddlAnemia" class="form-control selectpicker">
+                                        <option value="">--Please Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Gender</label>
+                            <div class="col-md-9 selectContainer">
+                                <div class="input-group">
+                                    <select name="Gender" id="ddlGender" class="form-control selectpicker">
+                                        <option value="">--Please Select--r</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">AADHAR NUMBER</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtAddharNo" name="Aadhar_no"placeholder="Aadhar_No" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Contact No.</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <input id="txtContact" name="contact_no" placeholder="(639)" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <button id="btnRegisterForScheme" type="button" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspREGISTER&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+
+                                <button id="btnCancelForScheme" type="reset" class="btn btn-primary">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

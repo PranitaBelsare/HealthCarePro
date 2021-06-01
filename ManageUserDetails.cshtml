@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "ManageUserDetails";
+    //Layout = null;
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<div class="container my-4">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title"><center><h4><b>Registration Form</b></h4></center>
+</div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform" class="form-horizontal" role="form">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">First Name</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="txtFirstName" name="txtFirstName" placeholder="First Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Last Name</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="txtLastName"name="txtLastName" placeholder="Last Name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Gender</label>
+                            <div class="col-md-9 selectContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                    <select name="Gender" id="ddlGender" class="form-control selectpicker">
+                                        <option value="">Select your Gender</option>
+                                        <option>Male</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Date Of Birth</label>
+                            <div class="col-md-9 selectContainer">
+                                @*<div class="input-group-addon input-group date" data-provide="datepicker">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>*@
+
+                                <div class="input-group date" data-provide="datepicker">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+
+                                    <input class="form-control" id="dtDOB" data-inputmask-alias="dd/mm/yyyy"
+                                           data-inputmask="'yearrange': { 'minyear': '1917', 'maxyear': '2020' }"
+                                           data-val="true" data-val-required="Required" placeholder="dd/mm/yyyy" type="text" value="" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="txtPwd" name="user_password" placeholder="Password" class="form-control" type="password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Confirm Password</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="txtConfirmPwd" name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">E-Mail</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input id="txtEmail" name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Contact No.</label>
+                            <div class="col-md-9 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input id="txtContact" name="contact_no" placeholder="(639)" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-9">
+                                <button id="btnRegister" type="button" class="btn btn-primary">Register</button>
+                           
+                               <button id="btnCancel" type="reset" class="btn btn-primary">Cancel</button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="text-center">Already have an account? <a href="/LoginForm/ManageLoginPage">Sign in</a></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/KratinPro/Registration.js"></script>
+<Script>
+        $(document).ready(function () {
+            ManageRegistrationPage.Init();
+        });
+</Script>
+}
+

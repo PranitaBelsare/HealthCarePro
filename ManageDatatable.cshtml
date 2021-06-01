@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "ManageDatatable";
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    .table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .th, td {
+        padding: 15px;
+    }
+</style>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Search Doctors
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <center><h5><b>Are you looking for doctors in India? Find their location & contact details</b></h5></center>
+                    <div class="col-6 card">
+                        <div class="card-body">
+                            <b> What Do You Want?</b>
+                            <span style="color: #FF0000; font-weight: bold">*</span>
+                            <select class="form-control" id="ddlSpecialist">
+                                <option value="0">Please select</option>
+                            </select>
+                        </div><br>
+                        <div class="card-body">
+                            <b>Hospitals:</b>
+                            <span style="color: #FF0000; font-weight: bold">*</span>
+                            <select class="form-control" id="ddlHospitals">
+                                <option value="0">Please select</option>
+                            </select>
+                        </div><br>
+                    </div>
+                    <div class="col-6 card">
+                        <div class="form-group text-center" id="DisplayDatatable" style="display:none">
+                            <table id="example" style="width:100%;" class="table table-hover">
+                                <caption><b>Hospital List</b></caption>
+                                <thead>
+                                    <tr>
+                                        <th><center><b>Doctor Name</b></center></th>
+                                        <th><center><b>Addresss</b></center></th>
+                                        <th><center><b>Mobile No</b></center></th>
+                                        <th><center><b>E-mail</b></center></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="getTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*@section scripts{
+
+    }*@
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/KratinPro/ElderCare.js"></script>
+<Script>
+    $(document).ready(function () {
+        ManageElderCarePage.Init();
+    });
+</Script>
+
+
+
+
